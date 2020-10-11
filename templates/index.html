@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>westlake</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+      body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+      body, html {
+        height: 100%;
+        color: #777;
+        line-height: 1.8;
+      }
+      
+      /* Create a Parallax Effect */
+      .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5, .bgimg-6, .bgimg-7, .bgimg-8, .bgimg-9, .bgimg-10, .bgimg-11, .bgimg-12 {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      #myVideo {
+        
+          
+  
+  min-width: 100%; 
+  min-height: 100%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      
+      /* First image (Logo. Full height) */
+
+      .bgimg-1 {
+        background-image: url('/static/images/westlake3.jpg');
+        min-height: 100%;
+      }
+      
+      .bgimg-2 {
+        min-height: 400px;
+      }
+         
+      .bgimg-3 {
+        background-image: url('/static/images/westlake12.jpg');
+        min-height: 400px;
+      }
+      
+      .w3-wide {letter-spacing: 10px;}
+      .w3-hover-opacity {cursor: pointer;}
+    
+    
+      </style>
+
+<body>
+
+    
+
+  <!-- logo and video -->
+  <div class="myVideo w3-display-container w3-opacity-min" id="home">
+      <video autoplay muted loop id="myVideo">
+          <source src="/static/images/westlake.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video> 
+    
+    <div class="w3-display-middle" style="white-space:nowrap;">
+        
+        
+      <span class="w3-xxlarge w3-text-white w3-wide">West Lake</span>
+      
+    </div>
+  </div>
+  
+  <!-- Container (About Section) -->
+  <div class="w3-content w3-container w3-padding-64" id="about">
+    <h3 class="w3-center">About West Lake</h3>
+    <p class="w3-center"><em>ten scenes</em></p>
+    <p>West Lake  is a freshwater lake in Hangzhou, China. It is divided into five sections by three causeways.
+       There are numerous temples, pagodas, gardens, and artificial islands within the lake.
+       West Lake has influenced poets and painters throughout Chinese history for its natural beauty and historic relics
+       <br>Traditionally, there are ten best-known scenic spots on the West Lake, each remembered by a four-character epithet.
+        Collectively, they are known as the "Ten Scenes of West Lake" 
+      <br>this website is going to show you how beautiful These Scenes are, if you like some of them, please leave some comments!
+
+      </p>
+
+  </div> 
+
+
+  
+{%for pic in images%}
+ <!--  Parallax Images -->
+  <div class="bgimg-2 w3-display-container w3-opacity-min" style="background-image:url('/static/images/{{ pic[1] }}');">
+    <div class="w3-display-middle">
+      <span class="w3-xxlarge w3-text-white "><h1>{{ pic[3] }}</h1></span>
+      
+    </div>
+  </div>
+
+  <!-- Container -->
+  <div class="w3-content w3-container w3-padding-64" >
+      
+      <h3 class="w3-center w3-large">Click to view theses scenes.</h>
+        <p class="w3-center"><em>______________________</em></p>
+  
+    <div class="w3-row-padding w3-center">
+        <div class="w3-center">
+          <a href='image/{{pic[0]}}'><img src="/static/images/{{ pic[1] }}" style="width:60%"></a>
+        </div>        
+      </div>
+    </div>
+   
+{% endfor %}
+
+ 
+ 
+  
+  
+  <!-- last words -->
+  <div class="bgimg-3 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
+       <p class="w3-xlarge w3-center w3-text-white"><em>thank you for viewing<br>please leave some comments<br>:)</em></p><br>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+    <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  </footer>
+  
+  </body>
+</html>
